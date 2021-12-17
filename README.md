@@ -3,17 +3,17 @@
 ##  Objetivos
 
 Desarrollar una aplicación web que permita la gestión de vehículos. Considerar los siguientes aspectos: 
-- Tipo de vehículo 
-- Cantidad de ruedas 
-- Marca 
-- Modelo 
-- Patente 
-- Numero de Chasis 
-- KMs recorridos 
+- Tipo de vehículo
+- Cantidad de ruedas
+- Marca
+- Modelo
+- Patente
+- Numero de Chasis
+- KMs recorridos
 - KMs de próximo mantenimiento preventivo
 
 ## Frontend
-- [] React (Hooks) / [ ] Vue.js / [x] Angular 
+- [ ] React (Hooks) / [ ] Vue.js / [x] Angular 
 - Bootstrap
 - Responsive design
 - JavaScript
