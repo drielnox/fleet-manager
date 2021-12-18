@@ -13,9 +13,9 @@
         public int Ruedas
         {
             get => _ruedas;
-            private set
+            set
             {
-                if (value > 1)
+                if (value < 1)
                 {
                     throw new Exception("El vehiculo debe tener dos o mas ruedas.");
                 }
@@ -27,7 +27,7 @@
         public string Marca
         {
             get => _marca;
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -41,7 +41,7 @@
         public string Modelo
         {
             get => _modelo;
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -52,7 +52,7 @@
             }
         }
 
-        public int NumeroChasis { get; private set; }
+        public int NumeroChasis { get; set; }
 
         public int KilometrosRecorridos { get; private set; }
 

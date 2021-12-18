@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entiti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{D6E85EDC-216F-4BF6-BED9-EFA586330C9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{7F7BC500-5F2D-440A-9D1B-1ECFCEC016FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{7F7BC500-5F2D-440A-9D1B-1ECFCEC016FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging", "Messaging\Messaging.csproj", "{ABE3FA59-7BC2-497C-BC73-C5FDBD1759E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{7F7BC500-5F2D-440A-9D1B-1ECFCEC016FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F7BC500-5F2D-440A-9D1B-1ECFCEC016FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F7BC500-5F2D-440A-9D1B-1ECFCEC016FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE3FA59-7BC2-497C-BC73-C5FDBD1759E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE3FA59-7BC2-497C-BC73-C5FDBD1759E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE3FA59-7BC2-497C-BC73-C5FDBD1759E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE3FA59-7BC2-497C-BC73-C5FDBD1759E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{F1F957AA-D099-459E-A636-0DD0A496FD7A} = {348CF663-5E96-4362-B464-9573A5E00DE3}
 		{D6E85EDC-216F-4BF6-BED9-EFA586330C9B} = {195B9A18-FE1A-4E6C-9952-1EB782567497}
 		{7F7BC500-5F2D-440A-9D1B-1ECFCEC016FD} = {1CA74FF8-117C-4A59-8EA0-2F6653CE50DD}
+		{ABE3FA59-7BC2-497C-BC73-C5FDBD1759E3} = {195B9A18-FE1A-4E6C-9952-1EB782567497}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF93586E-C3DA-4176-B169-74DC57293A95}

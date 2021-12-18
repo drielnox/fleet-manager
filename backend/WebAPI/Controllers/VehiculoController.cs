@@ -1,5 +1,5 @@
-using AutoMapper;
-using Data;
+using Application;
+using Messaging.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -8,33 +8,50 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class VehiculoController : ControllerBase
     {
-        private readonly FleetDbContext _context;
-        private readonly IMapper _mapper;
+        private readonly IVehiculoAppService _appService;
         private readonly ILogger<VehiculoController> _logger;
 
-        public VehiculoController(FleetDbContext context, IMapper mapper, ILogger<VehiculoController> logger)
+        public VehiculoController(IVehiculoAppService appService, ILogger<VehiculoController> logger)
         {
-            _context = context;
-            _mapper = mapper;
+            _appService = appService;
             _logger = logger;
-
-            _context.Database.EnsureCreated();
         }
 
-        [HttpGet()]
+        [HttpGet]
 
-        public IEnumerable<VehiculoViewModel> GetAll()
+        public ActionResult<IEnumerable<VehiculoViewModel>> GetAll()
         {
-            var result = _context.Vehiculos.ToList();
-            return _mapper.Map<IEnumerable<VehiculoViewModel>>(result);
+            var result = _appService.ObtenerTodos();
+            return Ok(result);
         }
 
         [HttpGet("{id:int}")]
 
-        public VehiculoViewModel GetOne(int id)
+        public ActionResult<VehiculoViewModel> GetOne(int id)
         {
-            var result = _context.Vehiculos.SingleOrDefault(x => x.Identificador == id);
-            return _mapper.Map<VehiculoViewModel>(result);
+            var result = _appService.Obtener(id);
+            return Ok(result);
+        }
+
+        [HttpPut]
+        public ActionResult Create(VehiculoViewModel vehiculo)
+        {
+            _appService.Crear(vehiculo);
+            return Ok();
+        }
+
+        [HttpPost]
+        public ActionResult<VehiculoViewModel> Update(VehiculoViewModel vehiculo)
+        {
+            var result = _appService.Actualizar(vehiculo);
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        public ActionResult Delete(VehiculoViewModel vehiculo)
+        {
+            _appService.Borrar(vehiculo);
+            return Ok();
         }
     }
 }
