@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/vehiculos")]
     public class VehiculoController : ControllerBase
     {
         private readonly IVehiculoAppService _appService;
@@ -40,16 +40,17 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
-        [HttpPost]
-        public ActionResult<VehiculoViewModel> Update(VehiculoViewModel vehiculo)
+        [HttpPost("{id:int}")]
+        public ActionResult<VehiculoViewModel> Update(int id, [FromBody] VehiculoViewModel vehiculo)
         {
             var result = _appService.Actualizar(vehiculo);
             return Ok(result);
         }
 
-        [HttpDelete]
-        public ActionResult Delete(VehiculoViewModel vehiculo)
+        [HttpDelete("{id:int}")]
+        public ActionResult Delete(int id)
         {
+            var vehiculo = _appService.Obtener(id);
             _appService.Borrar(vehiculo);
             return Ok();
         }
