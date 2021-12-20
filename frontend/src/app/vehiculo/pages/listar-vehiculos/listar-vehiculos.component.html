@@ -1,0 +1,52 @@
+<a
+    [routerLink]="['agregar']"
+    class="btn btn-primary"
+    role="button"
+    data-bs-toggle="button">
+    Agregar
+</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id.</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Ruedas</th>
+            <th scope="col">Nro. Chasis</th>
+            <th scope="col">KMs</th>
+            <th scope="col">Prox. Mant.</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehiculo of this.vehiculos$ | async">
+            <td>{{ vehiculo.identificador | number }}</td>
+            <td>{{ vehiculo.marca }}</td>
+            <td>{{ vehiculo.modelo }}</td>
+            <td>{{ vehiculo.ruedas | number }}</td>
+            <td>{{ vehiculo.numeroChasis }}</td>
+            <td>
+                {{ vehiculo.kilometrosRecorridos | number }}
+            </td>
+            <td>
+                {{ vehiculo.kilometroProximoMantenimiento | number }}
+            </td>
+            <td>
+                <a
+                    [routerLink]="['modificar', vehiculo.identificador]"
+                    class="btn btn-secondary"
+                    role="button"
+                    data-bs-toggle="button">
+                    Modificar
+                </a>
+                <a
+                    [routerLink]="['borrar', vehiculo.identificador]"
+                    class="btn btn-danger"
+                    role="button"
+                    data-bs-toggle="button">
+                    Borrar
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
